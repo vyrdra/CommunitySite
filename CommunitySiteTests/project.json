@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "CommunitySite": "1.0.0",
+    "xunit": "2.1.0",
+    "Microsoft.NETCore.App": "1.1.0",
+    "Microsoft.AspNetCore.Mvc": "1.0.1"
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [ "dotnet5.6", "portable-net45+win8" ]
+    }
+  },
+  "testRunner": "xunit",
+  "version": "1.0.0-*"
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5z+sDbRqkUelkE09ZG9xsQAAAAACAAAAAAAQZgAAAAEAACAAAADoyPfCmVegjt1pkANwj4G/5oNZwAwB1mHM4aO3uPw8UQAAAAAOgAAAAAIAACAAAADPLTbz2fXSjVywcPy8Xt0gFcdrsBlNuqNgKhDQolugnoAAAACXVH80eX+KiiMZfpI3WW4kMI2Emgft4hI+EzCc4msuQ7wl+/x2sWTK8gEl6T646ExxmHllIlbN42rxo8zl+CCj352Yu8OI6F60zGWY6k30FbpEXptSnSn0im5fCI1l6OHos30t8mNJa46PoaAnqGA+XcB9coFzjpDBh/m9C0FNnEAAAACvo5tBGHtCTVhyRrgbTwC/2Bna4TvJ74R+unuHSb1y92CZpYMi9a9gl+Lm2rOhBiUKUIXMQloaw668Nb0Na3mX</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <EfMigrations Include="CommunitySite.Repository.ApplicationDbContext">
+      <Value>Server=tcp:communitysite3.database.windows.net,1433;Initial Catalog=communitysitepub3;Persist Security Info=False;User ID=adminUser;Password=Rhasedi789!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>

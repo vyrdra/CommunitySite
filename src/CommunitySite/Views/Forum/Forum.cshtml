@@ -1,0 +1,64 @@
+﻿@model List<CommunitySite.Models.ForumMessage>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Forum";
+
+}
+
+<div class="col-md-2 text-left">
+
+    
+    
+    <a class="btn btn-block">@Html.ActionLink("Dog walkers", "PostsBySubject", "Forum", new { subject = "Walkers" }) </a>
+    <a class="btn btn-block">@Html.ActionLink("Thieving", "PostsBySubject", "Forum", new { subject = "Thief" } )</a>
+    <a class="btn btn-block">@Html.ActionLink("Birthdays!", "PostsBySubject", "Forum", new { subject = "Birthday" } )</a>
+    <a class="btn btn-block">@Html.ActionLink("Rha's Posts", "PostByMember", "Forum", new { alias = "Rha" })</a>
+    <a class="btn btn-block">@Html.ActionLink("Nut's Posts", "PostByMember", "Forum", new { alias = "Nut" })</a>
+
+</div>
+<div class="col-md-7 text-left">
+    <h2>Forum</h2>
+    
+    <div class="list-group" id="forum" >
+        
+            @foreach (var p in Model)
+            {
+                <div>
+                    <h4>From: @p.User.ForumAlias </h4>
+                </div>
+                @:<div class="list-group-item">
+                    @:Date: @p.Date.ToString("M/d/yyyy")<br />
+                    @:Subject: <strong>@p.Subject</strong><br />
+                    @p.Body<br />
+                    <div >
+                        <a href="@Url.Action("ReplyForm", "Forum", new { id = p.ForumMessageID })" class="list-group-item list-group-item-action list-group-item-success">Reply</a>
+                    
+                    </div>
+                    @if (p.Replys.Count() > 0)
+                    {
+                        @foreach (var r in p.Replys)
+                        {
+                            <div class="replys center-block" >
+                                <p class="reply_text" style="border-bottom:  1px solid #ccc; text-align: right;">From: @r.From  -  @r.Body</p>
+                            </div>
+                        }
+                    }
+                @:</div>
+            }
+
+      </div>
+
+</div>
+<div class="col-md-3  text-right">
+    <a class="btn btn-block">@Html.ActionLink("Show all Messages", "ShowAllMessages", "Forum")</a>
+    <a class="btn btn-block">@Html.ActionLink("Post to the forum", "AddPost", "Forum")</a>
+    <br />
+    <br />
+
+    <a class="btn btn-sm btn-primary"
+       asp-action="Logout" asp-controller="Login">Log Out</a>
+</div>
+
+
+
+

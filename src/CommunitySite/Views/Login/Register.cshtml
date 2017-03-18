@@ -1,0 +1,71 @@
+﻿@model CommunitySite.Models.ParkMember
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewBag.Title = "Register";
+    Layout = "_Layout";
+}
+
+<div class="col-md-2"></div>
+<div class="col-md-8">
+    testing
+    <h2>Register</h2>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <form asp-action="Register" asp-controller="Login" method="post">
+        <input asp-for="ParkMemberID" type="hidden" />
+        <div class="row">
+            <div class="col-lg-6">
+                <p>
+                    <label asp-for="FirstName"></label><br />
+                    <input asp-for="FirstName" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </p>
+                <p>
+                    <label asp-for="LastName"></label><br />
+                    <input asp-for="LastName" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </p>
+                <p>
+                    <label asp-for="Email"></label><br />
+                    <input asp-for="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </p>
+                
+                <p>
+                    <label asp-for="DogName"></label><br />
+                    <input asp-for="DogName" />
+                    <span asp-validation-for="DogName" class="text-danger"></span>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                
+                <p>
+                    <label asp-for="DogBreed"></label><br />
+                    <input asp-for="DogBreed" />
+                    <span asp-validation-for="DogBreed" class="text-danger"></span>
+                </p>
+                <p>
+                    <label asp-for="ForumAlias"></label><br />
+                    <input asp-for="ForumAlias" />
+                    <span asp-validation-for="ForumAlias" class="text-danger"></span>
+                </p>
+
+                <p>
+                    <label asp-for="UserName"></label><br />
+                    <input asp-for="UserName" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </p>
+                <p>
+                    <label asp-for="Password"></label><br />
+                    <input type="password" asp-for="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </p>
+            </div>
+        </div>
+        
+        
+  
+
+    <button type="submit">Register</button>
+    </form>
+</div>
+<div class="col-md-2"></div>

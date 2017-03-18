@@ -1,0 +1,23 @@
+﻿﻿@model CommunitySite.Models.ViewModels.ReplyViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Replys";
+}
+
+<div class="col-md-2"></div>
+<div class="col-md-8">
+    <h2 class="text-center">Add a reply:</h2>
+    <form asp-controller="Forum" asp-action="ReplyForm" method="post">
+        <div class="form-group center-block" id="reply_form">
+            <input asp-for="ReplyID" type="hidden" />
+            <label>From: </label><input asp-for="Reply.From" class="form-control"/>
+
+            <textarea asp-for="Reply.Body" class="form-control"></textarea><br />
+            <span asp-validation-for="Reply.Body" class="text-danger"></span>
+
+            <button type="submit" class="btn btn-primary pull-right">Post</button>
+        </div>
+    </form>
+</div>
+<div class="col-md-2"></div>

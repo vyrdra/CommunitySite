@@ -1,0 +1,37 @@
+﻿@model CommunitySite.Models.ForumMessage
+@addTagHelper  *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <form asp-controller="Forum" asp-action="AddPost" method="post" class="text-left ">
+       
+        @*<!--<h3>Park Forum Member: </h3><label>@Model.User.ForumAlias</label>-->*@
+        <input type="hidden" asp-for="ForumMessageID" />
+
+        <div>
+            <label asp-for="Date">Date: @ViewBag.Today</label>
+            
+        </div>
+        <div>
+            <label asp-for="User.ForumAlias">Name:</label><input asp-for="User.ForumAlias" class="form-control" /><br />
+            @*<span asp-validation-for="User.ForumAlias" class="text-danger">@ViewBag.Error</span>*@
+        </div>
+        <div>
+            <label asp-for="Subject">Subject:</label><input asp-for="Subject" class="form-control" /><br />
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Body">Post:</label><br />
+        </div>
+        <div>
+            <textarea asp-for="Body" class="form-control"></textarea>
+            <span asp-validation-for="Body" class="text-danger"></span>
+        </div>
+
+        <div>
+            <input type="submit" name="Post to Forum" value="submit" class="btn btn-block" />
+        </div>
+    </form>
+</div>
+<div class="col-md-3"></div>
